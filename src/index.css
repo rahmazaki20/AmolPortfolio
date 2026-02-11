@@ -1,0 +1,24 @@
+@import "tailwindcss";
+html {
+  /* Native smooth scroll for anchor links */
+  scroll-behavior: smooth;
+  /* Fixed header offset */
+  scroll-padding-top: 5rem;
+}
+
+/* Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #d97706;
+  border-radius: 5px;
+}
+
+/* Swiper pagination dots color */
+.swiper-pagination-bullet-active {
+  background: #d97706 !important;
+}
