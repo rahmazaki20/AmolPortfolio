@@ -18,7 +18,7 @@ import tour4Img from "./assets/imgs/tour4.jpg";
 import tour5Img from "./assets/imgs/tour8.jpg";
 
 
-import review1 from "./assets/imgs/reviwe1.jpg";
+// import review1 from "./assets/imgs/reviwe1.jpg";
 import review2 from "./assets/imgs/reviwe2.jpg";
 import review3 from "./assets/imgs/reviwe3.jpg";
 import review4 from "./assets/imgs/reviwe4.jpg";
@@ -49,7 +49,7 @@ import review28 from "./assets/imgs/reviwe28.jpg";
 import review29 from "./assets/imgs/reviwe29.jpg";
 
 const reviewImages = [
-  review1, review2, review3, review4, review5, review6, review7, review8, review9, review10,
+   review2, review3, review4, review5, review6, review7, review8, review9, review10,
   review11, review12, review13, review14, review15, review16, review17, review18, review19, review20,
   review21, review22, review23, review24, review25, review26, review27, review28, review29
 ];
