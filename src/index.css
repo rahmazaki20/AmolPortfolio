@@ -22,3 +22,26 @@ html {
 .swiper-pagination-bullet-active {
   background: #d97706 !important;
 }
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.animate-scroll-slow {
+  animation: scroll 60s linear infinite;
+}
+
+.animate-scroll-medium {
+  animation: scroll 45s linear infinite;
+}
+
+.animate-scroll-fast {
+  animation: scroll 35s linear infinite;
+}
+
+/* Pause animation on hover */
+.group:hover .animate-scroll-slow,
+.group:hover .animate-scroll-medium,
+.group:hover .animate-scroll-fast {
+  animation-play-state: paused;
+}

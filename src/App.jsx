@@ -17,8 +17,50 @@ import tour3Img from "./assets/imgs/tour3.jpg";
 import tour4Img from "./assets/imgs/tour4.jpg";
 import tour5Img from "./assets/imgs/tour8.jpg";
 
+
+import review1 from "./assets/imgs/reviwe1.jpg";
+import review2 from "./assets/imgs/reviwe2.jpg";
+import review3 from "./assets/imgs/reviwe3.jpg";
+import review4 from "./assets/imgs/reviwe4.jpg";
+import review5 from "./assets/imgs/reviwe5.jpg";
+import review6 from "./assets/imgs/reviwe6.jpg";
+import review7 from "./assets/imgs/reviwe7.jpg";
+import review8 from "./assets/imgs/reviwe8.jpg";
+import review9 from "./assets/imgs/reviwe9.jpg";
+import review10 from "./assets/imgs/reviwe10.jpg";
+import review11 from "./assets/imgs/reviwe11.jpg";
+import review12 from "./assets/imgs/reviwe12.jpg";
+import review13 from "./assets/imgs/reviwe13.jpg";
+import review14 from "./assets/imgs/reviwe14.jpg";
+import review15 from "./assets/imgs/reviwe15.jpg";
+import review16 from "./assets/imgs/reviwe16.jpg";
+import review17 from "./assets/imgs/reviwe17.jpg";
+import review18 from "./assets/imgs/reviwe18.jpg";
+import review19 from "./assets/imgs/reviwe19.jpg";
+import review20 from "./assets/imgs/reviwe20.jpg";
+import review21 from "./assets/imgs/reviwe21.jpg";
+import review22 from "./assets/imgs/reviwe22.jpg";
+import review23 from "./assets/imgs/reviwe23.jpg";
+import review24 from "./assets/imgs/reviwe24.jpg";
+import review25 from "./assets/imgs/reviwe25.jpg";
+import review26 from "./assets/imgs/reviwe26.jpg";
+import review27 from "./assets/imgs/reviwe27.jpg";
+import review28 from "./assets/imgs/reviwe28.jpg";
+import review29 from "./assets/imgs/reviwe29.jpg";
+
+const reviewImages = [
+  review1, review2, review3, review4, review5, review6, review7, review8, review9, review10,
+  review11, review12, review13, review14, review15, review16, review17, review18, review19, review20,
+  review21, review22, review23, review24, review25, review26, review27, review28, review29
+];
+// Split images into 3 columns for the mosaic
+const col1 = reviewImages.slice(0, 10);
+const col2 = reviewImages.slice(10, 20);
+const col3 = reviewImages.slice(20, 29);
+
 import BgImg from "./assets/imgs/luxor.png";
 import Nile from "./assets/imgs/py.png";
+import Contactus from "./Contactus";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -28,7 +70,9 @@ const navLinks = [
   { name: "FAQ", href: "#faq" },
   { name: "Contact", href: "#contact" },
 ];
-
+const reviews = [
+  
+]
 const tours = [
  {
     img: tour1Img,
@@ -69,8 +113,19 @@ const faqData = [
   { q: "Do you guide families with kids?", a: "I love teaching kids! I adapt my storytelling to be engaging and fun for all ages." },
   { q: "Is tipping expected in Egypt?", a: "Tipping (Baksheesh) is customary but optional. I can guide you on the local etiquette." },
 ];
-
+function ReviewCard({ img, darkMode }) {
+  return (
+    <motion.div 
+      whileHover={{ scale: 0.98, rotate: 1 }}
+      className={`relative rounded-2xl overflow-hidden border shadow-lg ${darkMode ? "border-slate-800" : "border-slate-100"}`}
+    >
+      <img src={img} alt="Guest Review" className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+      <div className="absolute inset-0 bg-amber-500/10 opacity-0 hover:opacity-100 transition-opacity" />
+    </motion.div>
+  );
+}
 export default function App() {
+  
   const [menuOpen, setMenuOpen] = useState(false);
   const [faqIndex, setFaqIndex] = useState(0);
   const [darkMode, setDarkMode] = useState(false); // DARK MODE STATE RE-ADDED
@@ -84,10 +139,10 @@ export default function App() {
     <div className={`font-sans transition-colors duration-500 ${darkMode ? "bg-slate-950 text-slate-100" : "bg-white text-slate-900"} selection:bg-amber-200 scroll-smooth`}>
       
       {/* 1. TOP PROGRESS BAR */}
-      <motion.div className="fixed top-0 left-0 right-0 h-1.5 bg-amber-500 z-[110] origin-left" style={{ scaleX }} />
+      <motion.div className="fixed top-0 left-0 right-0 h-1.5 bg-amber-500 z-110 origin-left" style={{ scaleX }} />
 
       {/* FLOATING CONTACT ICONS */}
-      <div className="fixed bottom-6 right-6 z-[100] flex flex-col gap-3">
+      <div className="fixed bottom-6 right-6 z-100 flex flex-col gap-3">
         <a href="mailto:aml_3p1151997@icloud.com" className="bg-[#007AFF] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
           <Mail size={24} />
         </a>
@@ -179,7 +234,7 @@ export default function App() {
             <span className="text-amber-600 font-bold tracking-[0.3em] uppercase text-sm block mb-4">The Philosophy</span>
             <h2 className={`text-4xl md:text-6xl font-black mb-8 leading-tight ${darkMode ? "text-white" : "text-slate-900"}`}>Beyond The <span className="text-amber-500">Ancient Stones</span></h2>
             <p className={`text-2xl leading-relaxed italic font-light ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-              "I don't just show you the monuments; I narrate the soul of a civilization that has lived for 5,000 years."
+              "I don't just show you the monuments; I bring to life the soul of a 7,000-year-old civilization — through atmosphere, storytelling, and a memorable step-by-step adventure"
             </p>
           </motion.div>
         </div>
@@ -202,7 +257,7 @@ export default function App() {
                 <motion.div 
                     key={lang.name} whileHover={{ y: -10 }} className={`relative p-10 rounded-[3rem] shadow-xl border overflow-hidden transition-all duration-500 ${darkMode ? "bg-slate-900 border-slate-800" : "bg-white border-slate-100"}`}
                 >
-                  <div className={`absolute top-0 left-0 w-full h-2 bg-gradient-to-r ${lang.accent}`} />
+                  <div className={`absolute top-0 left-0 w-full h-2 bg-linear-to-r ${lang.accent}`} />
                   <div className="flex justify-between items-start mb-6">
                     <div className={`p-4 rounded-2xl ${darkMode ? "bg-slate-800" : "bg-slate-50"}`}><Globe2 size={32} /></div>
                     <CheckCircle2 className="text-emerald-500" size={24} />
@@ -221,12 +276,12 @@ export default function App() {
       <section id="tours" className={`py-32 transition-colors overflow-hidden ${darkMode ? "bg-slate-900" : "bg-slate-50"}`}>
         <div className="container mx-auto px-6">
           <h2 className={`text-4xl md:text-5xl font-black mb-16 ${darkMode ? "text-white" : "text-slate-900"}`}>Curated Expeditions</h2>
-          <Swiper modules={[Navigation, Pagination, Autoplay]} navigation pagination={{ clickable: true }} autoplay={{ delay: 4000 }} spaceBetween={30} slidesPerView={1} breakpoints={{ 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }} className="!overflow-visible">
+          <Swiper modules={[Navigation, Pagination, Autoplay]} navigation pagination={{ clickable: true }} autoplay={{ delay: 4000 }} spaceBetween={30} slidesPerView={1} breakpoints={{ 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }} className="overflow-visible!">
             {tours.map((tour, i) => (
               <SwiperSlide key={i} className="py-12">
-                <motion.div whileHover={{ y: -20 }} className={`group relative rounded-[3rem] shadow-2xl overflow-hidden border transition-all duration-500 h-[500px] ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
+                <motion.div whileHover={{ y: -20 }} className={`group relative rounded-[3rem] shadow-2xl overflow-hidden border transition-all duration-500 h-125 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
                   <img src={tour.img} alt={tour.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/40 to-transparent" />
                   <div className="absolute bottom-0 p-10 text-white w-full">
                     <h3 className="text-3xl font-bold mb-2 leading-tight ">{tour.title}</h3>
                     <p className="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">{tour.desc}</p>
@@ -239,20 +294,48 @@ export default function App() {
       </section>
 
       {/* 7. REVIEWS SECTION */}
-      <section id="reviews" className={`py-32 transition-colors ${darkMode ? "bg-slate-950" : "bg-white"}`}>
-        <div className="container mx-auto px-6">
-          <h2 className={`text-5xl font-black text-center mb-20 ${darkMode ? "text-white" : "text-slate-900"}`}>Traveler Voices</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            {[
-              { text: "Fantastic guide! Very knowledgeable about Egyptian history.", name: "John — USA" },
-              { text: "Amazing experience & great photos! Amol knows all the best spots.", name: "Maria — Spain" },
-            ].map((r, i) => (
-              <motion.div key={i} className={`p-12 rounded-[3rem] border relative transition-all duration-500 ${darkMode ? "bg-slate-900 border-slate-800" : "bg-slate-50 border-slate-100"}`}>
-                <Star className="text-amber-500 mb-6" fill="#f59e0b" />
-                <p className={`text-2xl italic font-light ${darkMode ? "text-slate-300" : "text-slate-700"}`}>“{r.text}”</p>
-                <footer className="mt-8 text-amber-600 font-bold uppercase tracking-[0.2em] text-sm">— {r.name}</footer>
-              </motion.div>
-            ))}
+   \{/* 7. REVIEWS SECTION - MODERN VISUAL BOOK DESIGN */}
+ {/* 7. REVIEWS SECTION - LUXURY MASONRY MOSAIC */}
+      <section id="reviews" className={`py-32 transition-colors overflow-hidden ${darkMode ? "bg-slate-950" : "bg-white"}`}>
+        <div className="container mx-auto px-6 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <span className="text-amber-600 font-bold tracking-[0.3em] uppercase text-sm block mb-4">The Guest Gallery</span>
+            <h2 className={`text-5xl md:text-7xl font-black leading-tight ${darkMode ? "text-white" : "text-slate-900"}`}>
+              Trusted by <br /> <span className="text-amber-500 italic">Hundreds.</span>
+            </h2>
+          </div>
+          <p className={`text-lg max-w-xs ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+            Real moments captured by travelers from Singapore, USA, and beyond.
+          </p>
+        </div>
+
+        {/* The Scrolling Mosaic Container */}
+        <div className="relative h-[800px] overflow-hidden group">
+          {/* Gradient Overlays to fade top and bottom */}
+          <div className={`absolute inset-x-0 top-0 h-40 z-20 pointer-events-none bg-linear-to-b ${darkMode ? "from-slate-950" : "from-white"} to-transparent`} />
+          <div className={`absolute inset-x-0 bottom-0 h-40 z-20 pointer-events-none bg-linear-to-t ${darkMode ? "from-slate-950" : "from-white"} to-transparent`} />
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 h-full">
+            {/* Column 1 */}
+            <div className="flex flex-col gap-4 animate-scroll-slow">
+              {[...col1, ...col1].map((img, i) => (
+                <ReviewCard key={i} img={img} darkMode={darkMode} />
+              ))}
+            </div>
+            
+            {/* Column 2 - Faster & Offset */}
+            <div className="flex flex-col gap-4 animate-scroll-fast mt-[-100px]">
+              {[...col2, ...col2].map((img, i) => (
+                <ReviewCard key={i} img={img} darkMode={darkMode} />
+              ))}
+            </div>
+
+            {/* Column 3 - Hidden on mobile */}
+            <div className="hidden md:flex flex-col gap-4 animate-scroll-medium">
+              {[...col3, ...col3].map((img, i) => (
+                <ReviewCard key={i} img={img} darkMode={darkMode} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -261,17 +344,17 @@ export default function App() {
       <section id="faq" className="relative py-32 overflow-hidden text-white">
         <div className="absolute inset-0 z-0">
           <img src={Nile} alt="Background" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-slate-900 to-transparent" />
         </div>
         <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2 text-center lg:text-left">
             <h2 className="text-5xl md:text-6xl font-black mb-6">Curiosity <br /> <span className="text-amber-500 italic">Satisfied.</span></h2>
           </div>
-          <div className="lg:w-1/2 flex justify-center items-center h-[450px] relative w-full">
+          <div className="lg:w-1/2 flex justify-center items-center h-112.5 relative w-full">
             <AnimatePresence mode="popLayout">
               <motion.div 
                 key={faqIndex} initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ opacity: 0 }} 
-                onClick={nextFaqCard} className={`absolute w-full max-w-[420px] rounded-[3rem] shadow-2xl p-10 md:p-12 flex flex-col justify-between cursor-pointer select-none ${darkMode ? "bg-slate-800 text-white" : "bg-white text-slate-900"}`}
+                onClick={nextFaqCard} className={`absolute w-full max-w-105 rounded-[3rem] shadow-2xl p-10 md:p-12 flex flex-col justify-between cursor-pointer select-none ${darkMode ? "bg-slate-800 text-white" : "bg-white text-slate-900"}`}
               >
                 <HelpCircle className="text-amber-500" size={32} />
                 <h3 className="text-xl md:text-2xl font-black mb-4">{faqData[faqIndex].q}</h3>
@@ -284,36 +367,7 @@ export default function App() {
       </section>
 
       {/* 9. CONTACT SECTION */}
-      <section id="contact" className={`py-32 transition-colors ${darkMode ? "bg-slate-900" : "bg-slate-50"}`}>
-        <div className="container mx-auto px-6 max-w-5xl">
-          <div className={`rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row border transition-all duration-500 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
-            <div className="bg-amber-600 p-12 text-white md:w-2/5 flex flex-col justify-center">
-              <h2 className="text-4xl font-bold mb-6 italic">Let's Design Your Trip</h2>
-              
-              <div className="space-y-4">
-                <a href="https://wa.me/201016625800" target="_blank" className="flex items-center gap-3 hover:bg-white/10 p-2 rounded-xl transition-all">
-                    <MessageCircle size={20}/> <span>WhatsApp Chat</span>
-                </a>
-                <a href="mailto:soha_3p1151997@icloud.com" className="flex items-center gap-3 hover:bg-white/10 p-2 rounded-xl transition-all">
-                    <Mail size={20}/> <span>soha_3p1151997@icloud.com</span>
-                </a> 
-                <div className="flex items-center gap-3 p-2">
-                    <User size={20}/> <span>Personal Tour Guide</span>
-                </div>
-              </div>
-            </div>
-
-            <form action="https://formsubmit.co/soha_3p1151997@icloud.com" method="POST" className="p-12 md:w-3/5 space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <input type="text" name="name" placeholder="Full Name" className={`w-full border-b-2 bg-transparent py-4 outline-none transition-colors ${darkMode ? "border-slate-700 text-white focus:border-amber-500" : "border-slate-100 text-slate-900 focus:border-amber-500"}`} required />
-                <input type="email" name="email" placeholder="Email" className={`w-full border-b-2 bg-transparent py-4 outline-none transition-colors ${darkMode ? "border-slate-700 text-white focus:border-amber-500" : "border-slate-100 text-slate-900 focus:border-amber-500"}`} required />
-              </div>
-              <textarea name="message" placeholder="Trip details..." className={`w-full border-b-2 bg-transparent py-4 outline-none transition-colors ${darkMode ? "border-slate-700 text-white focus:border-amber-500" : "border-slate-100 text-slate-900 focus:border-amber-500"}`} rows="4" required />
-              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} type="submit" className={`w-full py-5 rounded-2xl font-black text-xl shadow-xl transition-colors ${darkMode ? "bg-amber-500 text-slate-950" : "bg-slate-900 text-white"}`}>Send Message</motion.button>
-            </form>
-          </div>
-        </div>
-      </section> 
+   <Contactus darkMode={darkMode}/>
 
       {/* 10. FOOTER - DESIGN RESTORED */}
       <footer className="relative text-white py-32 overflow-hidden bg-slate-950">
@@ -328,6 +382,7 @@ export default function App() {
           </motion.div>
         </div>
       </footer>
+      
     </div>
   );
 }
