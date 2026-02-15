@@ -45,3 +45,6 @@ html {
 .group:hover .animate-scroll-fast {
   animation-play-state: paused;
 }
+.swiper {
+  --swiper-navigation-color: #f59e0b;
+}
