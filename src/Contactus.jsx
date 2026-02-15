@@ -32,9 +32,9 @@ export default function Contactus({ darkMode, setDarkMode }) {
   };
 
   return (
-    <section id="contact" className={`py-32 transition-colors ${darkMode ? "bg-slate-900" : "bg-slate-50"}`}>
+    <section id="contact" className={`py-32 transition-colors ${darkMode ? "bg-slate-800" : "bg-slate-50"}`}>
       <div className="container mx-auto px-6 max-w-5xl">
-        <div className={`rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row border transition-all duration-500 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
+        <div className={`rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row border transition-all duration-500 ${darkMode ? "bg-slate-700 border-slate-700" : "bg-white border-slate-100"}`}>
           <div className="bg-amber-600 p-12 text-white md:w-2/5 flex flex-col justify-center">
             <h2 className="text-4xl font-bold mb-6 italic">Let's Design Your Trip</h2>
             
@@ -58,7 +58,7 @@ export default function Contactus({ darkMode, setDarkMode }) {
               <input type="email" name="user_email" placeholder="Email" className={`w-full border-b-2 bg-transparent py-4 outline-none transition-colors ${darkMode ? "border-slate-700 text-white focus:border-amber-500" : "border-slate-100 text-slate-900 focus:border-amber-500"}`} required />
             </div>
             <textarea name="message" placeholder="Trip details..." className={`w-full border-b-2 bg-transparent py-4 outline-none transition-colors ${darkMode ? "border-slate-700 text-white focus:border-amber-500" : "border-slate-100 text-slate-900 focus:border-amber-500"}`} rows="4" required />
-            <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} type="submit" className={`w-full py-5 rounded-2xl font-black text-xl shadow-xl transition-colors ${darkMode ? "bg-amber-500 text-slate-950" : "bg-slate-900 text-white"}`}>
+            <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} type="submit" className={`w-full py-5 rounded-2xl font-black text-xl shadow-xl transition-colors ${darkMode ? "bg-amber-500 text-slate-950" : "bg-slate-800 text-white"}`}>
               Send Message
             </motion.button>
           </form>

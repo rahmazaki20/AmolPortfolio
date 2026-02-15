@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { motion, useScroll, useSpring } from "framer-motion"; 
+import { motion } from "framer-motion"; 
 
 import review3 from "./assets/imgs/reviwe3.jpg";
 import review4 from "./assets/imgs/reviwe4.jpg";
@@ -34,7 +33,6 @@ const reviewImages = [
   review11, review12, review13, review14, review15, review16, review17, review18, review19, review20,
   review21, review22, review23, review24, review25, review26, review27, review28, review29
 ];
-// Split images into 3 columns for the mosaic
 const col1 = reviewImages.slice(0, 10);
 const col2 = reviewImages.slice(10, 20);
 const col3 = reviewImages.slice(20, 29);

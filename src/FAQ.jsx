@@ -21,7 +21,7 @@ export default function FAQ({ darkMode, setDarkMode }) {
  <section id="faq" className="relative py-32 overflow-hidden text-white">
         <div className="absolute inset-0 z-0">
           <img src={Nile} alt="Background" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-linear-to-r from-slate-900 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-slate-600 to-transparent" />
         </div>
         <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2 text-center lg:text-left">
@@ -31,7 +31,7 @@ export default function FAQ({ darkMode, setDarkMode }) {
             <AnimatePresence mode="popLayout">
               <motion.div 
                 key={faqIndex} initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ opacity: 0 }} 
-                onClick={nextFaqCard} className={`absolute w-full max-w-105 rounded-[3rem] shadow-2xl p-10 md:p-12 flex flex-col justify-between cursor-pointer select-none ${darkMode ? "bg-slate-800 text-white" : "bg-white text-slate-900"}`}
+                onClick={nextFaqCard} className={`absolute w-full max-w-105 rounded-[3rem] shadow-2xl p-10 md:p-12 flex flex-col justify-between cursor-pointer select-none ${darkMode ? "bg-slate-700 text-white" : "bg-white text-slate-900"}`}
               >
                 <HelpCircle className="text-amber-500" size={32} />
                 <h3 className="text-xl md:text-2xl font-black mb-4">{faqData[faqIndex].q}</h3>

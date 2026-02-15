@@ -14,7 +14,6 @@ const navLinks = [
 
 export default function Hero({ darkMode, setDarkMode }) {
      const [menuOpen, setMenuOpen] = useState(false);
-      const [faqIndex, setFaqIndex] = useState(0);
   return (
     <>
       {/* FLOATING CONTACT ICONS */}
@@ -33,7 +32,7 @@ export default function Hero({ darkMode, setDarkMode }) {
             initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
             href="#" className="text-2xl font-black text-amber-600 tracking-tighter flex items-center gap-2"
           >
-            <Sparkles size={24} /> AMOL TOURS
+            <Sparkles size={24} /> AMAL TOURS
           </motion.a>
           
           <nav className="hidden md:flex space-x-8 font-medium">
@@ -62,7 +61,7 @@ export default function Hero({ darkMode, setDarkMode }) {
           {menuOpen && (
             <motion.div 
               initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}
-              className={`md:hidden border-b overflow-hidden ${darkMode ? "bg-slate-900 border-slate-800" : "bg-white border-gray-100"}`}
+              className={`md:hidden border-b overflow-hidden ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-gray-100"}`}
             >
               <div className="flex flex-col p-6 space-y-4">
                 {navLinks.map((link) => (
@@ -77,7 +76,7 @@ export default function Hero({ darkMode, setDarkMode }) {
       </header>
        <section className="relative h-screen flex items-center justify-center overflow-hidden">
               <motion.div initial={{ scale: 1.2 }} animate={{ scale: 1 }} transition={{ duration: 2 }} className="absolute inset-0 z-0">
-                <div className={`absolute inset-0 z-10 transition-opacity ${darkMode ? "bg-black/70" : "bg-black/50"}`} />
+                <div className={`absolute inset-0 z-10 transition-opacity ${darkMode ? "bg-black/60" : "bg-black/40"}`} />
                 <img src={heroImg} className="w-full h-full object-cover" alt="Egypt Hero" />
               </motion.div>
               <div className="relative z-20 text-center text-white px-4">

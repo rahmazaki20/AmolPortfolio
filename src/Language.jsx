@@ -17,17 +17,17 @@ export default function Language({ darkMode, setDarkMode }) {
                 <div className="p-3 bg-amber-500 rounded-2xl text-white shadow-lg"><Languages size={28} /></div>
                 <span className="text-amber-600 font-bold tracking-[0.2em] uppercase text-sm">Communication</span>
               </div>
-              <h2 className={`text-4xl md:text-5xl font-black mb-6 leading-tight ${darkMode ? "text-white" : "text-slate-900"}`}>Fluent In <br /><span className="text-slate-400 font-light italic text-3xl md:text-4xl">History & Dialogue</span></h2>
+              <h2 className={`text-4xl md:text-5xl font-black mb-6 leading-tight ${darkMode ? "text-white" : "text-slate-800"}`}>Fluent In <br /><span className="text-slate-400 font-light italic text-3xl md:text-4xl">History & Dialogue</span></h2>
               <p className={`text-lg max-w-md ${darkMode ? "text-slate-400" : "text-slate-600"}`}>Every story sounds better in your own language.</p>
             </motion.div>
             <div className="lg:w-1/2 w-full grid sm:grid-cols-2 gap-8">
               {languageData.map((lang, i) => (
                 <motion.div 
-                    key={lang.name} whileHover={{ y: -10 }} className={`relative p-10 rounded-[3rem] shadow-xl border overflow-hidden transition-all duration-500 ${darkMode ? "bg-slate-900 border-slate-800" : "bg-white border-slate-100"}`}
+                    key={lang.name} whileHover={{ y: -10 }} className={`relative p-10 rounded-[3rem] shadow-xl border overflow-hidden transition-all duration-500 ${darkMode ? "bg-slate-700 border-slate-800" : "bg-white border-slate-100"}`}
                 >
                   <div className={`absolute top-0 left-0 w-full h-2 bg-linear-to-r ${lang.accent}`} />
                   <div className="flex justify-between items-start mb-6">
-                    <div className={`p-4 rounded-2xl ${darkMode ? "bg-slate-800" : "bg-slate-50"}`}><Globe2 size={32} /></div>
+                    <div className={`p-4 rounded-2xl ${darkMode ? "bg-slate-700" : "bg-slate-50"}`}><Globe2 size={32} /></div>
                     <CheckCircle2 className="text-emerald-500" size={24} />
                   </div>
                   <h3 className={`text-3xl font-black mb-1 ${darkMode ? "text-white" : "text-slate-900"}`}>{lang.name}</h3>

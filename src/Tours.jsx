@@ -42,7 +42,7 @@ const tours = [
 export default function Tours({ darkMode, setDarkMode }) {
   return (
     <>
-      <section id="tours" className={`py-32 transition-colors overflow-hidden ${darkMode ? "bg-slate-900" : "bg-slate-50"}`}>
+      <section id="tours" className={`py-32 transition-colors overflow-hidden ${darkMode ? "bg-slate-800" : "bg-slate-50"}`}>
         <div className="container mx-auto px-6">
           <h2 className={`text-4xl md:text-5xl font-black mb-16 ${darkMode ? "text-white" : "text-slate-900"}`}>Curated Expeditions</h2>
           <Swiper modules={[Navigation, Pagination, Autoplay]} navigation pagination={{ clickable: true }} autoplay={{ delay: 4000 }} spaceBetween={30} slidesPerView={1} breakpoints={{ 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }} className={`${darkMode ? "swiper-dark" : "swiper-light"} overflow-visible!`}>
