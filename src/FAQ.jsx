@@ -5,7 +5,7 @@ import Nile from "./assets/imgs/py.png";
 
 const faqData = [
   { q: "Do you arrange transportation?", a: "Yes, I provide private, air-conditioned luxury vehicles for all transfers and tours." },
-  { q: "Can you customize tours?", a: "Absolutely! We can tailor every itinerary to match your specific interests and pace." },
+  { q: "Can you customize tours?", a: "Absolutely! i can tailor every itinerary to match your specific interests and pace." },
   { q: "Do you help with tickets?", a: "I handle all entry ticket logistics so you can skip the long queues at the monuments." },
   { q: "Do you guide families with kids?", a: "I love teaching kids! I adapt my storytelling to be engaging and fun for all ages." },
   { q: "Is tipping expected in Egypt?", a: "Tipping (Baksheesh) is customary but optional. I can guide you on the local etiquette." },

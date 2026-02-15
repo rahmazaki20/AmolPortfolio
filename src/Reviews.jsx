@@ -37,6 +37,10 @@ const col1 = reviewImages.slice(0, 10);
 const col2 = reviewImages.slice(10, 20);
 const col3 = reviewImages.slice(20, 29);
 
+// Smaller slices for Mobile performance
+const col1Mobile = reviewImages.slice(0, 5); 
+const col2Mobile = reviewImages.slice(5, 10);
+
 function ReviewCard({ img, darkMode }) {
   return (
     <motion.div 
@@ -49,11 +53,10 @@ function ReviewCard({ img, darkMode }) {
   );
 }
 
-export default function Reviews({ darkMode, setDarkMode }) {
+export default function Reviews({ darkMode }) {
       
   return (
-<>
-<section id="reviews" className={`py-32 transition-colors overflow-hidden ${darkMode ? "bg-slate-950" : "bg-white"}`}>
+    <section id="reviews" className={`py-32 transition-colors overflow-hidden ${darkMode ? "bg-slate-950" : "bg-white"}`}>
         <div className="container mx-auto px-6 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl">
             <span className="text-amber-600 font-bold tracking-[0.3em] uppercase text-sm block mb-4">The Guest Gallery</span>
@@ -61,28 +64,39 @@ export default function Reviews({ darkMode, setDarkMode }) {
               Trusted by <br /> <span className="text-amber-500 italic">Hundreds.</span>
             </h2>
           </div>
-          {/* <p className={`text-lg max-w-xs ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-            Real moments captured by travelers from Singapore, USA, and beyond.
-          </p> */}
         </div>
 
-        <div className="relative h-200 overflow-hidden group">
+        <div className="relative h-150 md:h-200 overflow-hidden group">
+          {/* Shaders */}
           <div className={`absolute inset-x-0 top-0 h-40 z-20 pointer-events-none bg-linear-to-b ${darkMode ? "from-slate-950" : "from-white"} to-transparent`} />
           <div className={`absolute inset-x-0 bottom-0 h-40 z-20 pointer-events-none bg-linear-to-t ${darkMode ? "from-slate-950" : "from-white"} to-transparent`} />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 h-full">
+          {/* Grid Container */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 h-full">
+            
+            {/* COLUMN 1: Shows on all sizes, but limited items on Mobile */}
             <div className="flex flex-col gap-4 animate-scroll-slow">
-              {[...col1, ...col1].map((img, i) => (
-                <ReviewCard key={i} img={img} darkMode={darkMode} />
-              ))}
+              {/* Desktop view gets col1, Mobile gets col1Mobile */}
+              <div className="hidden md:flex flex-col gap-4">
+                {[...col1, ...col1].map((img, i) => <ReviewCard key={i} img={img} darkMode={darkMode} />)}
+              </div>
+              <div className="flex md:hidden flex-col gap-4">
+                {[...col1Mobile, ...col1Mobile].map((img, i) => <ReviewCard key={i} img={img} darkMode={darkMode} />)}
+              </div>
             </div>
             
-            <div className="flex flex-col gap-4 animate-scroll-fast mt-25">
-              {[...col2, ...col2].map((img, i) => (
-                <ReviewCard key={i} img={img} darkMode={darkMode} />
-              ))}
+            {/* COLUMN 2: Hidden on small phones (mobile), shows on Tablets (sm) and up */}
+            <div className="hidden sm:flex flex-col gap-4 animate-scroll-fast mt-25">
+               {/* Tablet view gets full col2, Small Tablet/Large Phone gets col2Mobile */}
+               <div className="hidden lg:flex flex-col gap-4">
+                {[...col2, ...col2].map((img, i) => <ReviewCard key={i} img={img} darkMode={darkMode} />)}
+              </div>
+              <div className="flex lg:hidden flex-col gap-4">
+                {[...col2Mobile, ...col2Mobile].map((img, i) => <ReviewCard key={i} img={img} darkMode={darkMode} />)}
+              </div>
             </div>
 
+            {/* COLUMN 3: Desktop only */}
             <div className="hidden md:flex flex-col gap-4 animate-scroll-medium">
               {[...col3, ...col3].map((img, i) => (
                 <ReviewCard key={i} img={img} darkMode={darkMode} />
@@ -91,6 +105,5 @@ export default function Reviews({ darkMode, setDarkMode }) {
           </div>
         </div>
       </section> 
-</>
   )
 }
